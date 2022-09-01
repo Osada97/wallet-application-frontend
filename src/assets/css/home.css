@@ -1,0 +1,72 @@
+/* home page styles */
+.home-pg{
+    padding: 50px;
+    width: 100%;
+}
+.home-pg .top-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.home-pg .top-row .category-sec{
+    flex: 1;
+}
+.home-pg .top-row .category-sec select{
+    width: 40%;
+    padding: 5px;
+    font-style: bold;
+}
+.home-pg .top-row .create-ex-sec{
+    flex: 1;
+    text-align: right;
+}
+.home-pg .top-row .create-ex-sec button{
+    background-color: #02027f;
+    padding: 10px;
+    width: 200px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.home-pg .mid-row{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    grid-gap: 20px;
+}
+.home-pg .mid-row .card{
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 3px;
+}
+.home-pg .mid-row .card .card-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.home-pg .mid-row .card .card-row h1{
+    font-size: 25px;
+}
+.home-pg .mid-row .card p.description{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.home-pg .mid-row .card h3, h4{
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.home-pg .mid-row .card .option-row{
+    display: flex;
+    justify-content: flex-end;
+    grid-gap: 20px;
+}
+.home-pg .mid-row .card .option-row button{
+    background: none;
+    border: none;
+
+}
+.home-pg .mid-row .card .option-row button img{
+    width: 15px;
+}
