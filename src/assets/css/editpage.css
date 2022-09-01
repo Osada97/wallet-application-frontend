@@ -1,0 +1,18 @@
+.model-ed-from{
+    width: 80%;
+    margin: auto;
+    padding: 50px;
+}
+.model-ed-from h1{
+    margin-bottom: 20px;
+}
+input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+button{
+    background: blue;
+    padding: 10px 50px;
+    color: white;
+}

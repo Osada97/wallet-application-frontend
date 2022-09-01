@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
+import "../assets/css/editpage.css";
 
 function EditExpenses() {
   const params = useParams();
@@ -52,8 +53,8 @@ function EditExpenses() {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="model-from">
-      <h1>Create Expense</h1>
+    <div className="model-ed-from">
+      <h1>Edit Expense</h1>
       <form action="#">
         <div className="form-fr-row">
           <input
