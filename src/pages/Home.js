@@ -1,92 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "../assets/css/home.css";
-import pen from "../assets/img/pen.svg";
-import trash from "../assets/img/trash.svg";
+import CategorySelector from "../components/CategorySelector";
+import CreateExpensesModel from "../components/CreateExpensesModel";
+import ExpensesCard from "../components/ExpensesCard";
 
 function Home() {
+  const [isModel, setisModel] = useState(false);
+  const experience = useSelector((state) => state.userExpenses);
   return (
-    <div className="home-pg">
-      <div className="top-row">
-        <div className="category-sec">
-          <select name="category" id="category">
-            <option value="food">Food</option>
-            <option value="household">Household</option>
-            <option value="social life">Social Life</option>
-            <option value="transportation">Transportation</option>
-            <option value="health">Health</option>
-            <option value="miscellaneous">Miscellaneous</option>
-          </select>
-        </div>
-        <div className="create-ex-sec">
-          <button>Create Expense</button>
-        </div>
-      </div>
-      <div className="mid-row">
-        <div className="card">
-          <div className="card-row">
-            <h1>Spent at keels</h1>
-            <p>20/10/2022</p>
-          </div>
-          <p className="description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            consequatur ipsa deleniti. Corrupti maxime placeat nam sint
-            quibusdam natus{" "}
-          </p>
-          <h3>HOUSEHOLD</h3>
-          <h4>1000 LKR</h4>
-          <div className="option-row">
-            <button>
-              <img src={pen} alt="pen" />
-            </button>
-            <button>
-              <img src={trash} alt="trash" />
-            </button>
+    // creating model
+    <>
+      {isModel ? (
+        <CreateExpensesModel setisModel={setisModel} isModel={isModel} />
+      ) : (
+        ""
+      )}
+      <div className="home-pg">
+        <div className="top-row">
+          <CategorySelector />
+          <div className="create-ex-sec">
+            <button onClick={() => setisModel(true)}>Create Expense</button>
           </div>
         </div>
-        <div className="card">
-          <div className="card-row">
-            <h1>Spent at keels</h1>
-            <p>20/10/2022</p>
-          </div>
-          <p className="description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            consequatur ipsa deleniti. Corrupti maxime placeat nam sint
-            quibusdam natus{" "}
-          </p>
-          <h3>HOUSEHOLD</h3>
-          <h4>1000 LKR</h4>
-          <div className="option-row">
-            <button>
-              <img src={pen} alt="pen" />
-            </button>
-            <button>
-              <img src={trash} alt="trash" />
-            </button>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-row">
-            <h1>Spent at keels</h1>
-            <p>20/10/2022</p>
-          </div>
-          <p className="description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum
-            consequatur ipsa deleniti. Corrupti maxime placeat nam sint
-            quibusdam natus{" "}
-          </p>
-          <h3>HOUSEHOLD</h3>
-          <h4>1000 LKR</h4>
-          <div className="option-row">
-            <button>
-              <img src={pen} alt="pen" />
-            </button>
-            <button>
-              <img src={trash} alt="trash" />
-            </button>
-          </div>
+        <div className="mid-row">
+          {Object.values(experience).length !== 0
+            ? Object.values(experience).map((data) => (
+                <ExpensesCard data={data} key={data._id} />
+              ))
+            : ""}
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
