@@ -56,7 +56,7 @@ function EditExpenses() {
     <div className="model-ed-from">
       <h1>Edit Expense</h1>
       <form action="#">
-        <div className="form-fr-row">
+        <div className="form-ed-row">
           <input
             type="text"
             placeholder="Title"
