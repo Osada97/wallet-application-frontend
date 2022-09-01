@@ -5,8 +5,12 @@ const userExpenses = (state = initialState, action) => {
     case "FETCH_EXPENSES":
       state = [];
       return { ...state, ...action.payload };
+    case "FETCH_FILTER_EXPENSES":
+      state = [];
+      return { ...state, ...action.payload };
     default:
       return { ...state };
   }
 };
+
 export default userExpenses;
